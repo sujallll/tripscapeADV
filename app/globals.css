@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-sora);
+}
+
+body {
+  font-family: var(--font-sans), sans-serif;
+  background:
+    radial-gradient(900px 500px at 10% -20%, rgba(151, 80, 255, 0.28), transparent),
+    radial-gradient(1000px 600px at 90% -10%, rgba(34, 211, 238, 0.2), transparent),
+    #060914;
+}
+
+.glass {
+  background: rgba(10, 14, 27, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #ffffff, #5ed6ff 42%, #ba84ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
