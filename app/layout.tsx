@@ -5,20 +5,22 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollToTopButton } from "@/components/ui/ScrollToTopButton";
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const sora = Sora({
-  variable: "--font-sora",
+  variable: "--font-heading",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Tripscape Adventures | Travel Beyond Ordinary",
+  title: "Tripscape Adventures | Ghumayenge, Sara Jahan",
   description:
-    "Curated premium group trips with cinematic experiences and unforgettable community moments.",
+    "Curated group tours across India. Premium adventures, real memories — Tripscape Adventures.",
 };
 
 export default function RootLayout({
@@ -27,10 +29,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${sora.variable}`}>
-      <body className="bg-[#060914] text-white">
+    <html lang="en" className={`${plusJakarta.variable} ${sora.variable}`}>
+      <body className="antialiased">
         <Navbar />
-        <main className="relative min-h-screen overflow-x-clip">{children}</main>
+        <main className="relative min-h-screen overflow-x-clip pt-[5.5rem] sm:pt-24">{children}</main>
         <Footer />
         <ScrollToTopButton />
       </body>
