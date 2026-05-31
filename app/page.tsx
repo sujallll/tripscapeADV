@@ -1,9 +1,20 @@
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/home/HeroSection";
 import { AboutSection } from "@/components/home/AboutSection";
 import { ContactSection } from "@/components/home/ContactSection";
-import { MemoriesSection } from "@/components/home/MemoriesSection";
 import { TripsSection } from "@/components/home/trips/TripsSection";
 import { Container } from "@/components/ui/Container";
+
+const MemoriesSection = dynamic(
+  () => import("@/components/home/MemoriesSection").then((mod) => mod.MemoriesSection),
+  {
+    loading: () => (
+      <section aria-hidden className="scroll-mt-32">
+        <div className="h-[720px] animate-pulse rounded-[2rem] bg-brand-navy/10" />
+      </section>
+    ),
+  },
+);
 
 export default function HomePage() {
   return (

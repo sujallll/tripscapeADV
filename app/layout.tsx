@@ -9,18 +9,41 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const sora = Sora({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Tripscape Adventures | Ghumayenge, Sara Jahan",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://tripscapeadventures.in"),
+  title: {
+    default: "Tripscape Adventures | Ghumayenge, Sara Jahan",
+    template: "%s | Tripscape Adventures",
+  },
   description:
     "Curated group tours across India. Premium adventures, real memories — Tripscape Adventures.",
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "Tripscape Adventures",
+    title: "Tripscape Adventures | Ghumayenge, Sara Jahan",
+    description:
+      "Curated group tours across India. Premium adventures, real memories — Tripscape Adventures.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tripscape Adventures",
+    description: "Curated group tours across India — premium adventures, real memories.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

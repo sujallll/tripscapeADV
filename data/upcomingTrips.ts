@@ -35,7 +35,7 @@ export const upcomingTrips: Trip[] = [
     route: "Malvan · Goa · Ratnagiri",
     inclusions: ["Beachfront Resort", "All Meals", "Transport", "Guided Tours"],
     mood: "Coastal + Culture",
-    image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?auto=format&fit=crop&w=960&q=75",
     description: "Explore the Konkan coastline — turquoise waters, seafood trails, forts, and golden sunsets with your travel crew.",
   },
   {
@@ -61,7 +61,7 @@ export const upcomingTrips: Trip[] = [
     route: "Manali · Solang · Old Manali · Nearby valleys",
     inclusions: ["Hotel Stays", "Meals", "Transport", "Trip Lead"],
     mood: "Snow + Scenic",
-    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=960&q=75",
     description: "Pine forests, mountain cafes, adventure activities, and cozy group stays in the heart of Himachal.",
   },
   {
@@ -74,7 +74,7 @@ export const upcomingTrips: Trip[] = [
     route: "Rishikesh · Mussoorie · Nearby hill gems",
     inclusions: ["Hotel Stays", "Meals", "Transport", "Guide"],
     mood: "Spiritual + Scenic",
-    image: "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=960&q=75",
     description: "River valleys, hill towns, and breathtaking Himalayan views — curated for travelers who love nature and culture.",
   },
 ];

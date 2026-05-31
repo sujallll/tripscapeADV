@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -89,12 +90,14 @@ export const ExpandingCards = React.forwardRef<HTMLUListElement, ExpandingCardsP
               aria-label={`${item.title} trip${isActive ? ", expanded" : ""}`}
               data-active={isActive ? "true" : "false"}
             >
-              <img
+              <Image
                 src={item.imgSrc}
                 alt={item.title}
-                loading="lazy"
+                fill
+                sizes="(max-width: 767px) 100vw, 420px"
+                priority={index === defaultActiveIndex}
                 className={cn(
-                  "absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-out",
+                  "object-cover transition-all duration-500 ease-out",
                   isActive ? "scale-100 grayscale-0" : "scale-110 grayscale",
                 )}
               />
@@ -168,6 +171,7 @@ export const ExpandingCards = React.forwardRef<HTMLUListElement, ExpandingCardsP
 
                 <Link
                   href={item.linkHref}
+                  prefetch={isActive}
                   onClick={(event) => event.stopPropagation()}
                   className={cn(
                     "trip-cta-glow mt-1 inline-flex w-fit rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 ease-out hover:border-brand-light hover:bg-brand",

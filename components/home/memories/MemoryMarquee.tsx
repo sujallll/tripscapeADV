@@ -37,6 +37,7 @@ export function MemoryMarquee({
               alt={image.alt}
               width={PHOTO_WIDTH}
               height={PHOTO_HEIGHT}
+              sizes="288px"
               loading="lazy"
               className="h-full w-full object-cover transition duration-500 ease-out group-hover/photo:scale-[1.06] group-hover/photo:brightness-110"
             />

@@ -16,6 +16,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 1.0625rem;
@@ -226,6 +232,8 @@ select {
 
 /* ——— Memories section ——— */
 .memories-shell {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
   background:
     radial-gradient(ellipse 85% 55% at 15% 0%, rgba(63, 94, 60, 0.28), transparent 58%),
     radial-gradient(ellipse 70% 45% at 100% 100%, rgba(15, 31, 61, 0.45), transparent),

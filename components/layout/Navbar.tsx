@@ -82,6 +82,7 @@ export function Navbar() {
               alt="Tripscape Adventures"
               width={40}
               height={40}
+              priority
               className="h-9 w-9 rounded-full object-cover ring-2 ring-white/20"
             />
             <span className="font-display hidden text-[0.95rem] font-semibold text-white sm:inline">

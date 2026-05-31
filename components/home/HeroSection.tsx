@@ -1,10 +1,14 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 import { Container } from "@/components/ui/Container";
 import { MountainSilhouette } from "@/components/ui/MountainSilhouette";
 import { SECTION_IDS, scrollToSection } from "@/lib/sections";
+
+const HERO_IMAGE =
+  "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1920&q=75";
 
 export function HeroSection() {
   const ref = useRef<HTMLElement>(null);
@@ -18,7 +22,15 @@ export function HeroSection() {
       id={SECTION_IDS.home}
       className="relative -mt-[5.5rem] flex min-h-screen min-h-[100svh] scroll-mt-28 items-center overflow-hidden sm:-mt-24 sm:scroll-mt-32"
     >
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center" />
+      <Image
+        src={HERO_IMAGE}
+        alt=""
+        fill
+        priority
+        fetchPriority="high"
+        sizes="100vw"
+        className="object-cover object-center"
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-[#2a4228]/85 via-[#1a2e1a]/90 to-[#0f1f3d]/95" />
 
       <motion.div style={{ y: mountainY }} className="pointer-events-none absolute inset-x-0 bottom-0 text-[#0a1628]">

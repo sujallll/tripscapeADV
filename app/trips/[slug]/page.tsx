@@ -1,10 +1,35 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { FAQAccordion } from "@/components/shared/FAQAccordion";
-import { getTripBySlug } from "@/data/upcomingTrips";
+import { getTripBySlug, upcomingTrips } from "@/data/upcomingTrips";
 import { faqs } from "@/data/faqs";
+
+export function generateStaticParams() {
+  return upcomingTrips.map((trip) => ({ slug: trip.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const trip = getTripBySlug(slug);
+  if (!trip) return {};
+
+  return {
+    title: `${trip.destination}${trip.tagline ? ` ${trip.tagline}` : ""}`,
+    description: trip.description,
+    openGraph: {
+      title: `${trip.destination} | Tripscape Adventures`,
+      description: trip.description,
+      images: [{ url: trip.image, alt: trip.destination }],
+    },
+  };
+}
 
 export default async function TripDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -14,7 +39,14 @@ export default async function TripDetailsPage({ params }: { params: Promise<{ sl
   return (
     <>
       <section className="relative h-[54vh] overflow-hidden">
-        <Image src={trip.image} alt={`${trip.destination} banner`} fill className="object-cover" priority />
+        <Image
+          src={trip.image}
+          alt={`${trip.destination} banner`}
+          fill
+          sizes="100vw"
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-brand-navy/90" />
         <Container className="relative flex h-full items-end pb-10">
           <div className="on-dark">
