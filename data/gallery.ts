@@ -4,18 +4,18 @@ export type MemoryImage = {
 };
 
 export const memoryGalleryImages: MemoryImage[] = [
-  { src: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=640&q=75", alt: "Sunrise at high altitude with the crew" },
-  { src: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=640&q=75", alt: "Roads that made us stop and stare" },
-  { src: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=640&q=75", alt: "Moments from the road" },
-  { src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=640&q=75", alt: "Golden hour and good stories" },
-  { src: "https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=640&q=75", alt: "Summit smiles and shared wins" },
-  { src: "https://images.unsplash.com/photo-1530789253388-582c481c54b0?auto=format&fit=crop&w=640&q=75", alt: "Night drives and conversations" },
-  { src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=640&q=75", alt: "Mountain peaks at dawn" },
-  { src: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=640&q=75", alt: "Himalayan vistas with friends" },
-  { src: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=640&q=75", alt: "Starry skies on the trail" },
-  { src: "https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=640&q=75", alt: "Beach bonfire memories" },
-  { src: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=640&q=75", alt: "Campfire stories under the stars" },
-  { src: "https://images.unsplash.com/photo-1504280390367-361c66761323?auto=format&fit=crop&w=640&q=75", alt: "Tent life and trail mornings" },
+  { src: "/memories/1.jpeg", alt: "Snow adventure on the rooftop bus" },
+  { src: "/memories/2.jpeg", alt: "Beach volleyball at golden hour" },
+  { src: "/memories/3.jpeg", alt: "Crew vibes on the beach" },
+  { src: "/memories/4.jpeg", alt: "Night out with the squad" },
+  { src: "/memories/5.jpeg", alt: "Sunset views from the rooftop cafe" },
+  { src: "/memories/6.jpeg", alt: "Beach days with the boys" },
+  { src: "/memories/7.jpeg", alt: "Group photo at Cafe Sissu, Himachal" },
+  { src: "/memories/8.jpeg", alt: "End of trip beach photo" },
+  { src: "/memories/9.jpeg", alt: "Mountain cottages in the valley" },
+  { src: "/memories/10.jpeg", alt: "Cozy stay on the hills" },
+  { src: "/memories/11.jpeg", alt: "Waking up to snowfall" },
+  { src: "/memories/12.jpeg", alt: "Warm lights on a cold mountain night" },
 ];
 
 export const memoryGalleryRowOne = memoryGalleryImages.slice(0, 6);

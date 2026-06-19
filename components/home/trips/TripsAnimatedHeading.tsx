@@ -27,11 +27,11 @@ export function TripsAnimatedHeading({
 
   return (
     <div>
-      <h2 className="font-display flex overflow-hidden text-3xl sm:text-4xl" aria-label={title}>
+      <h2 className="font-display flex text-3xl sm:text-4xl" aria-label={title}>
         {chars.map((char, index) => (
           <motion.span
             key={`${char}-${index}`}
-            initial={{ y: "100%", opacity: 0, filter: "blur(8px)" }}
+            initial={{ y: "0.4em", opacity: 0, filter: "blur(6px)" }}
             whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ ...spring, delay: index * 0.045 }}

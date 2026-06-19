@@ -167,8 +167,8 @@ export function MemoryReelShowcase({ videos }: { videos: MemoryVideo[] }) {
   const isMobile = useMediaQuery("(max-width: 767px)");
   const { ref, width } = useContainerWidth<HTMLDivElement>();
   const [mounted, setMounted] = useState(false);
-  const minWidthForThree = CARD_WIDTH * 3 + CARD_GAP * 2;
-  const showGrid = mounted && !isMobile && width >= minWidthForThree;
+  const minWidthForGrid = CARD_WIDTH * videos.length + CARD_GAP * (videos.length - 1);
+  const showGrid = mounted && !isMobile && width >= minWidthForGrid;
 
   useEffect(() => setMounted(true), []);
 
@@ -179,7 +179,7 @@ export function MemoryReelShowcase({ videos }: { videos: MemoryVideo[] }) {
   return (
     <div ref={ref}>
       {showGrid ? (
-        <div className="grid grid-cols-3 gap-6">
+        <div className={`grid gap-6 justify-center`} style={{ gridTemplateColumns: `repeat(${videos.length}, minmax(0, ${CARD_WIDTH}px))` }}>
           {videos.map((video) => (
             <ReelCard key={video.id} video={video} active />
           ))}

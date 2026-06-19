@@ -22,7 +22,7 @@ export const upcomingTrips: Trip[] = [
     departureDates: "24 May – 29 May · 30 May – 4 Jun · 6 Jun – 11 Jun",
     inclusions: ["Hotel Stays", "Meals", "AC 2×2 Bus", "Guide"],
     mood: "Beach + Social",
-    image: "/trips/goa.png",
+    image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=960&q=75",
     description: "Sun, sand, and curated group vibes — beach days, social nights, and hassle-free travel with Tripscape.",
   },
   {
@@ -48,7 +48,7 @@ export const upcomingTrips: Trip[] = [
     route: "Shimla · Sangla · Chitkul · Kalpa · Tabo · Kaza · Chandratal · Manali",
     inclusions: ["Hotel Stays", "Meals", "Transport", "Guide"],
     mood: "Himalayan Roadtrip",
-    image: "/trips/spiti-valley.png",
+    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=960&q=75",
     description: "A legendary Spiti circuit through high-altitude villages, monasteries, and the surreal beauty of Chandratal Lake.",
   },
   {

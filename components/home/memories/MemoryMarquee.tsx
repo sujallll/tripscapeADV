@@ -41,9 +41,6 @@ export function MemoryMarquee({
               loading="lazy"
               className="h-full w-full object-cover transition duration-500 ease-out group-hover/photo:scale-[1.06] group-hover/photo:brightness-110"
             />
-            <figcaption className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-brand-navy/90 to-transparent p-3 text-xs text-white/90 transition duration-300 group-hover/photo:translate-y-0">
-              {image.alt}
-            </figcaption>
           </figure>
         ))}
       </div>
