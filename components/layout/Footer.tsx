@@ -38,15 +38,20 @@ export function Footer() {
           </div>
         </div>
         <div className="space-y-2 text-sm text-white/75">
-          <p className="flex items-center gap-2">
-            <Phone size={14} /> +91 98765 43210
-          </p>
-          <p className="flex items-center gap-2">
-            <Mail size={14} /> hello@tripscapeadventures.com
-          </p>
-          <p className="flex items-center gap-2">
-            <MessageCircle size={14} /> WhatsApp Support
-          </p>
+          <a href="tel:+917021110711" className="flex items-center gap-2 transition hover:text-white">
+            <Phone size={14} /> +91 70211 10711
+          </a>
+          <a href="mailto:Tripscapeadventures14@gmail.com" className="flex items-center gap-2 transition hover:text-white">
+            <Mail size={14} /> Tripscapeadventures14@gmail.com
+          </a>
+          <a
+            href="https://wa.me/917021110711?text=Hi!%20I%27m%20interested%20in%20booking%20a%20trip%20with%20Tripscape%20Adventures."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 transition hover:text-white"
+          >
+            <MessageCircle size={14} /> WhatsApp Us
+          </a>
           <a
             href={INSTAGRAM_URL}
             target="_blank"

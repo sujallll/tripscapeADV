@@ -93,7 +93,7 @@ export function ContactSection() {
           </div>
           <div className="surface-card rounded-2xl p-5">
             <h3 className="font-display text-xl font-bold">Phone & Email</h3>
-            <p className="mt-2 text-muted">+91 98765 43210 | hello@tripscapeadventures.com</p>
+            <p className="mt-2 text-muted">+91 70211 10711 | Tripscapeadventures14@gmail.com</p>
           </div>
           <div className="surface-card rounded-2xl p-5">
             <h3 className="font-display text-xl font-bold">Meet us</h3>
