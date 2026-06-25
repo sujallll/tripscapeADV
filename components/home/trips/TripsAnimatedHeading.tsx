@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
-const spring = { type: "spring" as const, stiffness: 420, damping: 32 };
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export function TripsAnimatedHeading({
   title,
@@ -13,7 +13,6 @@ export function TripsAnimatedHeading({
   subtitle: string;
 }) {
   const reducedMotion = usePrefersReducedMotion();
-  const chars = title.split("");
 
   if (reducedMotion) {
     return (
@@ -27,33 +26,27 @@ export function TripsAnimatedHeading({
 
   return (
     <div>
-      <h2 className="font-display flex text-3xl sm:text-4xl" aria-label={title}>
-        {chars.map((char, index) => (
-          <motion.span
-            key={`${char}-${index}`}
-            initial={{ y: "0.4em", opacity: 0, filter: "blur(6px)" }}
-            whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ ...spring, delay: index * 0.045 }}
-            className="inline-block"
-            style={{ whiteSpace: char === " " ? "pre" : undefined }}
-          >
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
-        ))}
-      </h2>
+      <motion.h2
+        className="font-display text-3xl sm:text-4xl"
+        initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.65, ease }}
+      >
+        {title}
+      </motion.h2>
       <motion.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.65, delay: chars.length * 0.045 + 0.1, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.65, delay: 0.15, ease }}
         className="brush-divider origin-left"
       />
       <motion.p
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.55, delay: chars.length * 0.045 + 0.25, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.55, delay: 0.25, ease }}
         className="lead mt-4 max-w-2xl"
       >
         {subtitle}

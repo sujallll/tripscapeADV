@@ -17,11 +17,9 @@ export function LazyReelVideo({
     if (!el) return;
 
     if (active) {
-      el.preload = "auto";
       void el.play().catch(() => undefined);
     } else {
       el.pause();
-      el.preload = "none";
     }
   }, [active]);
 
@@ -32,7 +30,7 @@ export function LazyReelVideo({
       muted
       loop
       playsInline
-      preload="none"
+      preload="metadata"
       poster={video.poster}
       aria-label={`${video.title} — ${video.location}`}
     >

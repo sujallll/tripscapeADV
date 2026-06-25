@@ -106,20 +106,23 @@ export const ExpandingCards = React.forwardRef<HTMLUListElement, ExpandingCardsP
                   "absolute inset-0 bg-gradient-to-t transition-opacity duration-500",
                   isActive
                     ? "from-brand-navy/90 via-brand-navy/45 to-brand-navy/10"
-                    : "from-black/80 via-black/45 to-black/10",
+                    : "from-black/80 via-black/50 to-black/20",
                 )}
               />
 
-              <article className="absolute inset-0 flex flex-col justify-end gap-2 p-4 md:p-5">
-                <h3
-                  className={cn(
-                    "font-display origin-left text-sm font-medium uppercase tracking-wider text-white/80 transition-all duration-300 ease-out md:rotate-90",
-                    isActive ? "opacity-0 md:opacity-0" : "opacity-100",
-                  )}
-                >
+              {/* Collapsed destination label — centered, fades out when expanded */}
+              <div
+                className={cn(
+                  "pointer-events-none absolute inset-0 z-10 flex items-center justify-center transition-opacity duration-300 ease-out",
+                  isActive ? "opacity-0" : "opacity-100",
+                )}
+              >
+                <span className="font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-white drop-shadow-[0_1px_10px_rgba(0,0,0,1)] md:text-[17px] md:[writing-mode:vertical-rl]">
                   {item.title}
-                </h3>
+                </span>
+              </div>
 
+              <article className="absolute inset-0 flex flex-col justify-end gap-2 p-4 md:p-5">
                 <div
                   className={cn(
                     "text-brand-light transition-all duration-300 ease-out",
@@ -161,7 +164,7 @@ export const ExpandingCards = React.forwardRef<HTMLUListElement, ExpandingCardsP
                 {item.priceLabel ? (
                   <p
                     className={cn(
-                      "font-display text-lg text-brand-light transition-all duration-300 ease-out",
+                      "font-display text-lg text-white transition-all duration-300 ease-out",
                       isActive ? "opacity-100 delay-[260ms]" : "opacity-0",
                     )}
                   >
